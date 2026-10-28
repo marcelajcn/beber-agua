@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💧 Lembrete de Água</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Cabeçalho -->
+        <header>
+            <h1><i class="fa-solid fa-droplet"></i> Hidrate-se</h1>
+            <p>Mantenha sua meta diária em dia!</p>
+        </header>
+
+        <!-- Configuração de Meta e Notificações -->
+        <section class="settings-card">
+            <div class="setting-item">
+                <label for="goalInput">Meta Diária (ml):</label>
+                <div class="input-group">
+                    <input type="number" id="goalInput" value="2000" step="100" min="200">
+                    <button id="saveGoalBtn" class="btn-small">Salvar</button>
+                </div>
+            </div>
+            
+            <div class="setting-item notification-toggle">
+                <span>Notificações:</span>
+                <button id="notifyBtn" class="btn-secondary"><i class="fa-solid fa-bell-slash"></i> Ativar Lembretes</button>
+            </div>
+        </section>
+
+        <!-- Visualizador de Progresso (Copo Animado) -->
+        <section class="visual-section">
+            <div class="cup-container">
+                <div class="cup">
+                    <div class="water" id="waterWave">
+                        <div class="wave"></div>
+                    </div>
+                    <div class="cup-content">
+                        <span id="percentage">0%</span>
+                        <span id="liters">0 / 2000 ml</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Botões de Ação Rápida -->
+        <section class="actions-section">
+            <h3>Adicionar Água</h3>
+            <div class="quick-buttons">
+                <button class="btn-water" data-ml="200">+200 ml</button>
+                <button class="btn-water" data-ml="300">+300 ml</button>
+                <button class="btn-water" data-ml="500">+500 ml</button>
+            </div>
+            <div class="custom-add">
+                <input type="number" id="customMl" placeholder="Outro valor (ml)" min="10">
+                <button id="addCustomBtn" class="btn-primary"><i class="fa-solid fa-plus"></i> Adicionar</button>
+            </div>
+        </section>
+
+        <!-- Histórico do Dia -->
+        <section class="history-section">
+            <div class="history-header">
+                <h3>Histórico de Hoje</h3>
+                <button id="resetBtn" class="btn-text"><i class="fa-solid fa-rotate-right"></i> Reiniciar</button>
+            </div>
+            <ul id="historyList">
+                <!-- Preenchido via JavaScript -->
+            </ul>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
